@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 public class Cal {
 
     //private variable
-
     private Map<String, Integer> map;
     private String exp;
 
@@ -21,7 +20,7 @@ public class Cal {
         for (int i = 0; i < exp.length(); ++i){
             if (exp.charAt(i) != ' '){
                 this.exp = this.exp + exp.charAt(i);
-                System.out.println(this.exp);
+                //System.out.println(this.exp);
             }
         }
         //log here
@@ -31,11 +30,12 @@ public class Cal {
     }
 
     //help function 0:
-    //check if the () if paired
+    //check if the () is paired
 
 
     //help function 1:
     //check if the str is a number
+    /*
     private boolean isInteger(String str){
         try {
             Integer.valueOf(str);
@@ -47,6 +47,7 @@ public class Cal {
             return false;
         }
     }
+    */
 
     //help function 2:
     //middleIndex
@@ -70,13 +71,15 @@ public class Cal {
     //initial call
     public int eval(){
         System.out.println("1");
+        System.out.println(exp);
+        System.out.println("2");
         return eval(exp);
     }
 
     //evaluate the value of variables
     public int eval(String str){
 
-        System.out.println(str);
+        //System.out.println(str);
 
         try {
             int n = Integer.valueOf(str);
@@ -94,6 +97,32 @@ public class Cal {
             int left = eval(str.substring(0, midIndex));
             int right = eval(str.substring(midIndex + 1, str.length()));
             return left + right;
+        }else if (str.startsWith("sub(")) {
+            str = str.substring(4, str.length() - 1);
+            int midIndex = middleIndex(str);
+            System.out.println(midIndex);
+            int left = eval(str.substring(0, midIndex));
+            int right = eval(str.substring(midIndex + 1, str.length()));
+            return left - right;
+        }else if (str.startsWith("mult")) {
+            str = str.substring(4, str.length() - 1);
+            int midIndex = middleIndex(str);
+            System.out.println(midIndex);
+            int left = eval(str.substring(0, midIndex));
+            int right = eval(str.substring(midIndex + 1, str.length()));
+            return left * right;
+        }else if (str.startsWith("div(")) {
+            str = str.substring(4, str.length() - 1);
+            int midIndex = middleIndex(str);
+            System.out.println(midIndex);
+            int left = eval(str.substring(0, midIndex));
+            int right = eval(str.substring(midIndex + 1, str.length()));
+            //can not div by 0
+            if (right == 0) {
+                //logger.info("Invalid operation: divider is 0");
+                System.exit(1);
+            }
+            return left / right;
         }
 
         return 0;
