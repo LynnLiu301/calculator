@@ -6,3 +6,7 @@ There is a simple input
 
 java calculator.Main "add(2, 2)"
 4
+
+Note: User has to quote their input link "user input here"
+
+
