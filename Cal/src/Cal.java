@@ -33,8 +33,6 @@ public class Cal {
         map = new HashMap<String, Integer>();
     }
 
-    //help function 0:
-    //check if the () is paired
 
     //help function:
     //middleIndex
