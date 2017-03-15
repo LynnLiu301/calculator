@@ -4,7 +4,7 @@ It is a calculator program in Java that evaluates expressions in a very simple i
 
 There is a simple input
 
-java calculator.Main "add(2, 2)"
+java Cal "add(1,1)"
 
 4
 
