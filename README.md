@@ -10,4 +10,11 @@ java Cal "add(1,1)"
 
 Note: User has to quote their input like "user input here"
 
+Since I don't have log4J, I use some equivalent logging.
+
+Three level of logs : info  -> logging.info
+                      error -> longging.warning
+                      DEBUG -> //System print
+                     
+
 
