@@ -1,8 +1,12 @@
 # calculator
 
-It is a calculator program in Java that evaluates expressions in a very simple integer expression language. The program takes an input on the command line, computes the result, and prints it to the console.
+It is a calculator program in Java that evaluates expressions in a very simple integer expression language. 
+The program :
+1.Takes an input on the command line.
+2.Computes the result.
+3.Prints it to the console.
 
-There is a simple input
+There is a example input:
 
 java Cal "add(1,1)"
 
